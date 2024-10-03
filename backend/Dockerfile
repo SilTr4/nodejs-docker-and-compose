@@ -21,4 +21,6 @@ RUN npm сi --omit=dev \
 
 COPY --from=builder /app/dist ./dist/
 
+COPY ./ecosystem.config.js ./  
+
 ENTRYPOINT ["pm2-runtime", "start", "ecosystem.config.js"]
