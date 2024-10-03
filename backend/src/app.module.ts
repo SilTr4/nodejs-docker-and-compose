@@ -22,6 +22,10 @@ const {
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '../../.env',
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: POSTGRES_HOST,
@@ -32,7 +36,6 @@ const {
       entities: [User, Wish, Wishlist, Offer],
       synchronize: true,
     }),
-    ConfigModule.forRoot({ isGlobal: true }),
     UsersModule,
     WishesModule,
     WishlistModule,
