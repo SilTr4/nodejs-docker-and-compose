@@ -27,7 +27,7 @@ services:
     networks:
       - external
   
-  localhost:
+  student_db:
     container_name: "postgres"
     image: postgres:alpine
     restart: always
